@@ -1,0 +1,69 @@
+@import-normalize; /* bring in normalize.css styles */
+
+:root {
+  /* COLOR */
+  --main-color:#172234;
+  --accent-color: #B29F7E;
+  --white-color:#FFFFFF;
+  --background-title-color:#E0E0E0;
+  --black-text: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: Merriweather;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.modalIsOpen {
+  overflow: hidden;
+}
+
