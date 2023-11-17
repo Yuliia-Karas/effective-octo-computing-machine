@@ -34,7 +34,13 @@ function handleSubmit(event) {
     body: JSON.stringify(userData),
   })
     .then((response) => response.json())
-    .then((data) => {
+      .then((data) => {
+        const token = data.token;
+
+        if (token) {
+          document.cookie = `token=${token}; SameSite=None; Secure`;
+        }
+          
         console.log(data);
          registerForm.reset();
     })
@@ -44,3 +50,5 @@ function handleSubmit(event) {
       
 
 }
+
+
