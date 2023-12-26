@@ -7,7 +7,6 @@ function handleSubmit(event) {
 
   const email = document.querySelector('input[name="email"]').value;
   const password = document.querySelector('input[name="password"]').value;
- 
 
   if (email === "" || password === "") {
     alert("Please fill in all the fields!");
@@ -24,7 +23,12 @@ function handleSubmit(event) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        alert("name or email is wrong!");
+      }
+      return response.json();
+    })
     .then((data) => {
       const token = data.token;
 
@@ -33,9 +37,8 @@ function handleSubmit(event) {
       }
 
       console.log(data);
-     loginForm.reset();
-     window.location.href = "/index.html";
-
+      loginForm.reset();
+      window.location.href = "/index.html";
     })
     .catch((error) => {
       console.error("Error:", error);

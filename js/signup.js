@@ -23,9 +23,9 @@ function handleSubmit(event) {
   }
 
   const userData = {
-    name: name,
-    email: email,
-    password: password,
+    name,
+    email,
+    password,
   };
 
   fetch("https://backend-zb-yk.onrender.com/api/auth/register", {
@@ -35,6 +35,7 @@ function handleSubmit(event) {
   })
     .then((response) => {
       if (!response.ok) {
+        alert("name already in use");
         throw new Error(`HTTP error! Status:${response.status}`);
       }
       return response.json();
@@ -56,5 +57,3 @@ function handleSubmit(event) {
       console.error("Error:", error);
     });
 }
-
-
